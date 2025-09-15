@@ -1,6 +1,6 @@
 {
-  "name": "react-modern-calendar-datepicker",
-  "version": "3.1.6",
+  "name": "react-modern-calendar-datepicker-plus",
+  "version": "1.0.0",
   "description": "A modern, beautiful, customizable date picker for React",
   "main": "lib/index.js",
   "types": "index.d.ts",
@@ -9,7 +9,7 @@
     "lint": "concurrently \"eslint src\" \"prettier --check \"./src/**/*.css\"\" ",
     "lint:write": "prettier --write \"./src/**/*.js\"  \"./src/**/*.css\"",
     "test": "jest ./test --coverage",
-    "test:watch": "jest ./test --watch",
+    "test:watch": "jest ./tesst --watch",
     "clean": "rimraf lib",
     "build": "cross-env NODE_ENV=production rollup -c",
     "size": "npm run build && size-limit",
@@ -21,10 +21,10 @@
     "index.d.ts"
   ],
   "author": "Kiarash Zarinmehr",
-  "homepage": "https://kiarash-z.github.io/react-modern-calendar-datepicker",
+  "homepage": "https://github.com/rs-navid/react-modern-calendar-datepicker-plus",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kiarash-Z/react-modern-calendar-datepicker.git"
+    "url": "https://github.com/rs-navid/react-modern-calendar-datepicker-plus.git"
   },
   "bugs": {
     "url": "https://github.com/Kiarash-Z/react-modern-calendar-datepicker/issues"

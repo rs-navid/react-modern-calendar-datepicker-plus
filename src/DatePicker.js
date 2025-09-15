@@ -46,7 +46,9 @@ const DatePicker = ({
     };
     window.addEventListener('blur', handleBlur, false);
     return () => {
-      window.removeEventListener('blur', handleBlur, false);
+      if (window) {
+        window.removeEventListener('blur', handleBlur, false);
+      }
     };
   }, []);
 
