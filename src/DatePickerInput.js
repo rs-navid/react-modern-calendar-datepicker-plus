@@ -6,7 +6,17 @@ import { TYPE_SINGLE_DATE, TYPE_RANGE, TYPE_MUTLI_DATE } from './shared/constant
 
 const DatePickerInput = React.forwardRef(
   (
-    { value, inputPlaceholder, inputClassName, inputName, formatInputText, renderInput, locale },
+    {
+      value,
+      disabled,
+      inputPlaceholder = '',
+      inputClassName = '',
+      inputName = '',
+      formatInputText = () => '',
+      renderInput = () => null,
+      locale,
+      inputId,
+    },
     ref,
   ) => {
     const { getLanguageDigits } = useLocaleUtils(locale);
@@ -70,8 +80,12 @@ const DatePickerInput = React.forwardRef(
             ref={ref}
             value={getValue()}
             name={inputName}
+            disabled={disabled}
+            id={inputId || `datepicker-plus-${Date.now()}`}
             placeholder={placeholderValue}
-            className={`DatePicker__input -${isRtl ? 'rtl' : 'ltr'} ${inputClassName}`}
+            className={`DatePicker__input -${isRtl ? 'rtl' : 'ltr'} ${inputClassName} ${
+              disabled ? 'disabled' : ''
+            }`}
             aria-label={placeholderValue}
           />
         )
@@ -81,13 +95,5 @@ const DatePickerInput = React.forwardRef(
     return render();
   },
 );
-
-DatePickerInput.defaultProps = {
-  formatInputText: () => '',
-  renderInput: () => null,
-  inputPlaceholder: '',
-  inputClassName: '',
-  inputName: '',
-};
 
 export default DatePickerInput;
